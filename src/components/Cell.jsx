@@ -1,7 +1,8 @@
-function Cell () {
+function Cell ({cellIndex, isOn, toggleLights}) {
+
     return (
-        <button className="btn"></button>
-    )
+         <button className={isOn ? "btn-green" : "btn-red"}></button>
+         )
 }
 
 export default Cell;
