@@ -27,14 +27,17 @@ function Board() {
                 currentCell = [columnIndex, rowIndex];
                 console.log(currentCell);
                 
-              newArray = [...array];  
-              newArray[columnIndex][rowIndex] == true ? newArray[columnIndex][rowIndex] = false : newArray[columnIndex][rowIndex] = true;
-          // function updateAdjacentCell(newArray) => {
+              newArray = [...array]; 
+              updatedArray = [[rowIndex - 1], [rowIndex +1], [columnIndex - 1], [columnIndex + 1]] 
+              
+              const [ leftCell, rightCell, topCell, bottomCell ] = updatedArray;
+               
+              newArray(updatedArray) == true ? newArray[updatedArray] = false : newArray[updatedArray] = true;
+              
 
-          // }
-              newArray[columnIndex+1][rowIndex] == true ? newArray[columnIndex+1][rowIndex] = false : newArray[columnIndex+1][rowIndex] = true;
-                setArray(newArray);
-                console.log(newArray);
+              // newArray[columnIndex+1][rowIndex] == true ? newArray[columnIndex+1][rowIndex] = false : newArray[columnIndex+1][rowIndex] = true;
+              //   setArray(newArray);
+              //   console.log(newArray);
         
               }
               // console.log("Printing a cell");
