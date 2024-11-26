@@ -28,12 +28,10 @@ function Board() {
                 console.log(currentCell);
                 
               newArray = [...array];  
-              newArray[rowIndex][cellIndex] = true;
+              newArray[rowIndex][cellIndex] == true ? newArray[rowIndex][cellIndex] = false : newArray[rowIndex][cellIndex] = true;
                 setArray(newArray);
                 console.log(newArray);
-                // if (currentCell == [rowIndex, cellIndex]) {
-                //   isOn = false;
-                  // 
+        
               }
               // console.log("Printing a cell");
               return (
