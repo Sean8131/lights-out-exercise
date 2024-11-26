@@ -1,4 +1,5 @@
 import Cell from "./Cell";
+import { useState } from "react";
 
 function Board() {
   //   const lightsArray = Array(3)
@@ -6,18 +7,18 @@ function Board() {
   //     .map(() => Array(3).fill(true));
   // console.log(lightsArray);
 
-  const randomArray = [
+  const [array, setArray] = useState ([
     [false, false, false, false, false],
     [false, false, false, false, false],
     [false, false, false, false, false],
     [false, false, false, false, false],
     [false, false, false, false, false],
-  ];
-  //console.log(randomArray);
+  ]);
+  //console.log(array);
 
   return (
     <div>
-      {randomArray.map((e, rowIndex) => {
+      {array.map((e, rowIndex) => {
         // console.log("printing a row");
         return (
           <div>
@@ -25,9 +26,15 @@ function Board() {
               function toggleLights() {
                 currentCell = [rowIndex, cellIndex];
                 console.log(currentCell);
-                if (currentCell == [rowIndex, cellIndex]) {
-                  isOn = true;
-                }}
+                
+              newArray = [...array];  
+              newArray[rowIndex][cellIndex] = true;
+                setArray(newArray);
+                console.log(newArray);
+                // if (currentCell == [rowIndex, cellIndex]) {
+                //   isOn = false;
+                  // 
+              }
               // console.log("Printing a cell");
               return (
                 <Cell isOn={f} key={cellIndex} toggleLights={toggleLights} />
