@@ -9,17 +9,25 @@ function Board() {
   const randomArray = [
     [true, false, true, false, true],
     [false, false, true, false, false],
-    
+    [false, false, true, false, false],
+    [false, false, true, false, false],
+    [false, false, true, false, false],
   ];
   //console.log(randomArray);
 
   return (
     <div>
-      {randomArray
-        .map((e, index) => e.map((f, indexT) => {
-          console.log(f);
-          return <Cell isOn={f} key={indexT} />;
-        }))}
+      {randomArray.map((e, index) => {
+        console.log("printing a row");
+        return (
+          <div>
+            {e.map((f, indexT) => {
+              console.log("Printing a cell");
+              return <Cell isOn={f} key={indexT} />;
+            })}
+          </div>
+        );
+      })}
     </div>
   );
 }

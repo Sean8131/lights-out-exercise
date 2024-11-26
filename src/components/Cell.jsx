@@ -1,3 +1,5 @@
+import './Cell.css';
+
 function Cell ({cellIndex, isOn, toggleLights}) {
 
     return (
