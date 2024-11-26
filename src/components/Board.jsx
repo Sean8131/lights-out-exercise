@@ -18,24 +18,28 @@ function Board() {
 
   return (
     <div>
-      {array.map((e, rowIndex) => {
+      {array.map((e, columnIndex) => {
         // console.log("printing a row");
         return (
           <div>
-            {e.map((f, cellIndex) => {
+            {e.map((f, rowIndex) => {
               function toggleLights() {
-                currentCell = [rowIndex, cellIndex];
+                currentCell = [columnIndex, rowIndex];
                 console.log(currentCell);
                 
               newArray = [...array];  
-              newArray[rowIndex][cellIndex] == true ? newArray[rowIndex][cellIndex] = false : newArray[rowIndex][cellIndex] = true;
+              newArray[columnIndex][rowIndex] == true ? newArray[columnIndex][rowIndex] = false : newArray[columnIndex][rowIndex] = true;
+          // function updateAdjacentCell(newArray) => {
+
+          // }
+              newArray[columnIndex+1][rowIndex] == true ? newArray[columnIndex+1][rowIndex] = false : newArray[columnIndex+1][rowIndex] = true;
                 setArray(newArray);
                 console.log(newArray);
         
               }
               // console.log("Printing a cell");
               return (
-                <Cell isOn={f} key={cellIndex} toggleLights={toggleLights} />
+                <Cell isOn={f} key={rowIndex} toggleLights={toggleLights} />
               );
               })}
           </div>
