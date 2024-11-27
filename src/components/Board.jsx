@@ -26,12 +26,13 @@ function Board() {
             {e.map((f, rowIndex) => {
               function toggleLights() {
                 currentCell = [columnIndex, rowIndex];
-                console.log(currentCell);
+                //console.log(currentCell);
                 
               newArray = [...array]; 
-              updatedArray = [[rowIndex - 1], [rowIndex +1], [columnIndex - 1], [columnIndex + 1]] 
+              updatedArray = [[columnIndex, rowIndex -1], [columnIndex, rowIndex +1], [columnIndex - 1, rowIndex], [columnIndex + 1, rowIndex]]; 
               
               const [ leftCell, rightCell, topCell, bottomCell ] = updatedArray;
+              console.log(leftCell, rightCell, topCell, bottomCell);
                
               newArray[updatedArray] == true ? newArray[updatedArray] = false : newArray[updatedArray] = true;
               
