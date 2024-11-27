@@ -1,5 +1,6 @@
 import Cell from "./Cell";
 import { useState } from "react";
+import './Board.css';
 
 function Board() {
   //   const lightsArray = Array(3)
@@ -21,7 +22,7 @@ function Board() {
       {array.map((e, columnIndex) => {
         // console.log("printing a row");
         return (
-          <div>
+          <div className='main-board'>
             {e.map((f, rowIndex) => {
               function toggleLights() {
                 currentCell = [columnIndex, rowIndex];
@@ -32,7 +33,7 @@ function Board() {
               
               const [ leftCell, rightCell, topCell, bottomCell ] = updatedArray;
                
-              newArray(updatedArray) == true ? newArray[updatedArray] = false : newArray[updatedArray] = true;
+              newArray[updatedArray] == true ? newArray[updatedArray] = false : newArray[updatedArray] = true;
               
 
               // newArray[columnIndex+1][rowIndex] == true ? newArray[columnIndex+1][rowIndex] = false : newArray[columnIndex+1][rowIndex] = true;
